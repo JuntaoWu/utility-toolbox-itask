@@ -18,9 +18,9 @@ namespace UtilityToolbox.iTask.Web.Infrastructure
 
         public IKernel Kernel { get { return kernel; } }
 
-        public NinjectDependencyResolver(IKernel kernel)
+        public NinjectDependencyResolver()
         {
-            this.kernel = kernel;
+            this.kernel = new StandardKernel();
             AddBindings();
         }
 
