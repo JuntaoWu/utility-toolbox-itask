@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="UtilityToolbox.iTask.Domain.Entities.SystemInfo">
+    <Position X="3.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\SystemInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UtilityToolbox.iTask.Domain.Entities.AdvancedTaskInfo">
+    <Position X="3" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgCAAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Entities\AdvancedTaskInfo.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="NormalizedTask" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="UtilityToolbox.iTask.Domain.Entities.ColumnDefinition">
+    <Position X="3" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAQAAAAAAAAQAQAAAAAAAAA=</HashCode>
+      <FileName>Entities\ColumnDefinition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UtilityToolbox.iTask.Domain.Entities.CustomizedTask">
+    <Position X="5.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAACAAAAAAAAAAAgQAAAACA=</HashCode>
+      <FileName>Entities\CustomizedTask.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ColumnDefinition" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="UtilityToolbox.iTask.Domain.Entities.Label">
+    <Position X="9.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAACAAAQAAAAAAAAAAAAAwAAAAAA=</HashCode>
+      <FileName>Entities\Label.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="MileStone" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="UtilityToolbox.iTask.Domain.Entities.MileStone">
+    <Position X="9.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAgAAAAAAAAAQAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Entities\MileStone.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UtilityToolbox.iTask.Domain.Entities.NormalizedTask">
+    <Position X="6" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAggEAAAAAAAAACAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>Entities\NormalizedTask.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Labels" />
+      <Property Name="MileStones" />
+      <Property Name="CustomizedTasks" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
