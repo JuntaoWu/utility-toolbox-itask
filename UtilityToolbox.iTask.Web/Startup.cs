@@ -14,9 +14,7 @@ namespace UtilityToolbox.iTask.Web
     public partial class Startup
     {
         public void Configuration(IAppBuilder app)
-        {
-            //DependencyResolver.SetResolver(new NinjectDependencyResolver());
-            
+        {            
             ConfigureAuth(app);
         }
     }
