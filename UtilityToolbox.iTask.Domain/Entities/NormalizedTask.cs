@@ -17,5 +17,6 @@ namespace UtilityToolbox.iTask.Domain.Entities
         public List<Label> Labels { get; set; }
 
         public SystemInfo SystemInfo { get; set; }
+        public DateTime ExpectedTime { get; set; }
     }
 }

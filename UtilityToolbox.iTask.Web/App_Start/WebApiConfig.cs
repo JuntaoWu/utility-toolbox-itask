@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
+using UtilityToolbox.iTask.Web.Infrastructure;
 
 namespace UtilityToolbox.iTask.Web
 {
@@ -25,6 +26,8 @@ namespace UtilityToolbox.iTask.Web
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            config.DependencyResolver = new NinjectDependencyResolver();
         }
     }
 }

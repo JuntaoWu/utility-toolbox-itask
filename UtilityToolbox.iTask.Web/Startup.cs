@@ -5,6 +5,7 @@ using Microsoft.Owin;
 using Owin;
 using System.Web.Mvc;
 using UtilityToolbox.iTask.Web.Infrastructure;
+using System.Web.Http;
 
 [assembly: OwinStartup(typeof(UtilityToolbox.iTask.Web.Startup))]
 
@@ -14,7 +15,8 @@ namespace UtilityToolbox.iTask.Web
     {
         public void Configuration(IAppBuilder app)
         {
-            DependencyResolver.SetResolver(new NinjectDependencyResolver());
+            //DependencyResolver.SetResolver(new NinjectDependencyResolver());
+            
             ConfigureAuth(app);
         }
     }

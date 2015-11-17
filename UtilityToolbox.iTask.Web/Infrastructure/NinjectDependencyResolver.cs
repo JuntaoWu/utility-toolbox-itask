@@ -9,34 +9,54 @@ using UtilityToolbox.iTask.Domain.Interface;
 using Moq;
 using UtilityToolbox.iTask.Domain.Entities;
 using Ninject.Syntax;
+using System.Web.Http.Dependencies;
 
 namespace UtilityToolbox.iTask.Web.Infrastructure
 {
-    public class NinjectDependencyResolver : IDependencyResolver
+    public class NinjectDependencyScope : IDependencyScope
     {
-        private IKernel kernel;
+        protected IResolutionRoot resolver;
 
-        public IKernel Kernel { get { return kernel; } }
-
-        public NinjectDependencyResolver()
+        public NinjectDependencyScope(IResolutionRoot resolver)
         {
-            this.kernel = new StandardKernel();
-            AddBindings();
+            this.resolver = resolver;
+        }
+
+        public void Dispose()
+        {
+            var disposible = resolver as IDisposable;
+            if(disposible != null)
+            {
+                disposible.Dispose();
+            }
+            resolver = null;
         }
 
         public object GetService(Type serviceType)
         {
-            return kernel.TryGet(serviceType);
+            return resolver.TryGet(serviceType);
         }
 
         public IEnumerable<object> GetServices(Type serviceType)
         {
-            return kernel.GetAll(serviceType);
+            return resolver.GetAll(serviceType);
         }
+    }
 
-        public IBindingToSyntax<T> Bind<T>()
+    public class NinjectDependencyResolver : NinjectDependencyScope, System.Web.Http.Dependencies.IDependencyResolver
+    {
+        public IKernel Kernel { get { return this.resolver as IKernel; } }
+
+        public NinjectDependencyResolver() : this(new StandardKernel()) { }
+
+        public NinjectDependencyResolver(IKernel kernel) : base(kernel)
         {
-            return kernel.Bind<T>();
+            this.AddBindings();
+        }
+        
+        private IBindingToSyntax<T> Bind<T>()
+        {
+            return Kernel.Bind<T>();
         }
 
         private void AddBindings()
@@ -45,7 +65,15 @@ namespace UtilityToolbox.iTask.Web.Infrastructure
             mock.Setup(i => i.NormalizedTasks).Returns(
                 new List<NormalizedTask> { }
             );
+            mock.Setup(i => i.GetNormalizedTask(It.IsAny<int>())).Returns(
+                new NormalizedTask { ID = 1, ExpectedTime = DateTime.Now }    
+            );
             Bind<ITaskRepository>().ToConstant(mock.Object);
+        }
+
+        public IDependencyScope BeginScope()
+        {
+            return new NinjectDependencyScope(Kernel.BeginBlock());
         }
     }
 }
