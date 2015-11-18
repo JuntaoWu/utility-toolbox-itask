@@ -1,0 +1,33 @@
+﻿<!-- ko with: affair-->
+<div class="row">
+    <div class="col-md-4">
+        <ul data-bind="foreach: AffairList">
+            <li><a data-bind="attr: { href: ComputedHref }, text: Title"></a></li>
+        </ul>
+    </div>
+    <div class="col-md-8">
+        <form>
+            <table class="table table-bordered form-group">
+                <caption>Affair <strong data-bind="text: ID"></strong></caption>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Expected Time</th>
+                        <th>Operation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="active">
+                        <td><input data-bind="value: Title" type="text" name="Title" class="form-control" /></td>
+                        <td><input data-bind="value: Description" type="text" name="Description" class="form-control" /></td>
+                        <td><input data-bind="value: ExpectedTimeDisplayed" type="text" name="ExpectedTime" class="form-control" id="datepicker1" /></td>
+                        <td><input data-bind="click: submitAffair" type="submit" value="submit" class="form-control" /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+
+    </div>
+</div>
+<!-- /ko -->

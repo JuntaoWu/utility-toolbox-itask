@@ -11,7 +11,9 @@ namespace UtilityToolbox.iTask.Domain.Entities
         public int ID { get; set; }
         public string Name { get; set; }
         public string Color { get; set; }
-        public MileStone MileStone { get; set; }
-        public List<NormalizedTask> NormalizedTasks { get; set; }
+
+        //Navigator
+        public virtual MileStone MileStone { get; set; }
+        public virtual List<NormalizedTask> NormalizedTasks { get; set; }
     }
 }

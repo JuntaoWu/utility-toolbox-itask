@@ -11,10 +11,9 @@ namespace UtilityToolbox.iTask.Domain.Entities
         public int ID { get; set; }
         public string Value { get; set; }
 
-        public NormalizedTask NormalizedTask { get; set; }
-
-        public ColumnDefinition ColumnDefinition { get; set; }
-
-        public SystemInfo SystemInfo { get; set; }
+        //Navigator
+        public virtual NormalizedTask NormalizedTask { get; set; }
+        public virtual ColumnDefinition ColumnDefinition { get; set; }
+        public virtual SystemInfo SystemInfo { get; set; }
     }
 }

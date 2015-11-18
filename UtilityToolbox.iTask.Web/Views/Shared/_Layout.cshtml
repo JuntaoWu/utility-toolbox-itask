@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/jquery-ui")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
@@ -28,6 +29,7 @@
     </div>
     <div class="container body-content">
         @RenderBody()
+        @RenderSection("SPAViews", required: false)
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
@@ -36,6 +38,7 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jquery-ui")
     @RenderSection("scripts", required: false)
 </body>
 </html>

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Web.Http;
 using System.Web.Mvc;
+using UtilityToolbox.iTask.Domain.Concrete;
 using UtilityToolbox.iTask.Domain.Entities;
 using UtilityToolbox.iTask.Domain.Interface;
 using UtilityToolbox.iTask.Web.Infrastructure;
@@ -25,7 +26,10 @@ namespace UtilityToolbox.iTask.Web
             mock.Setup(i => i.GetNormalizedTask(It.IsAny<int>())).Returns(
                 new NormalizedTask { ID = 1, ExpectedTime = DateTime.Now }
             );
-            Bind<ITaskRepository>().ToConstant(mock.Object);
+            mock.Setup(i => i.UpdateNormalizedTask(It.IsAny<NormalizedTask>()));
+            //Bind<ITaskRepository>().ToConstant(mock.Object);
+
+            Bind<ITaskRepository>().To<TaskRepository>();
         }
 
         public static void RegisterDependencies(HttpConfiguration config)

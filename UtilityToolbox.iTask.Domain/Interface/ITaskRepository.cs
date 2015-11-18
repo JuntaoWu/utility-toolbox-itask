@@ -12,5 +12,6 @@ namespace UtilityToolbox.iTask.Domain.Interface
         IEnumerable<NormalizedTask> NormalizedTasks { get; set; }
 
         NormalizedTask GetNormalizedTask(int id);
+        void UpdateNormalizedTask(NormalizedTask task);
     }
 }

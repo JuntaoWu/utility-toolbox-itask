@@ -18,7 +18,7 @@ namespace UtilityToolbox.iTask.Web.Tests.Controllers
 
             // Arrange
             HomeController controller = new HomeController();
-            DefaultController defaultController = new DefaultController(mock.Object);
+            AffairController defaultController = new AffairController(mock.Object);
 
             // Act
             ViewResult result = controller.Index() as ViewResult;

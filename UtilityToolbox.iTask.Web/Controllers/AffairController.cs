@@ -1,32 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Threading.Tasks;
-using System.Web.Http;
-using UtilityToolbox.iTask.Domain.Entities;
+using System.Web;
+using System.Web.Mvc;
 using UtilityToolbox.iTask.Domain.Interface;
-using UtilityToolbox.iTask.Web.Models;
 
 namespace UtilityToolbox.iTask.Web.Controllers
 {
-    public class AffairController : ApiController
+    public class AffairController : Controller
     {
         private ITaskRepository repo;
 
-        public AffairController(ITaskRepository repo)
+        public AffairController(ITaskRepository repository)
         {
-            this.repo = repo;
+            this.repo = repository;
         }
 
-        public async Task<AffairViewModel> Get(int id)
+        // GET: Default
+        public ActionResult Index()
         {
-            return await Task.Run<AffairViewModel>(() =>
-            {
-                NormalizedTask task = repo.GetNormalizedTask(id);
-                return new AffairViewModel { ID = 1, ExpectedTime = DateTime.Now };
-            });
+            
+            return View();
         }
     }
 }

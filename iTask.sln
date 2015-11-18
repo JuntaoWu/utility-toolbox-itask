@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilityToolbox.iTask.Web.Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilityToolbox.iTask.Domain", "UtilityToolbox.iTask.Domain\UtilityToolbox.iTask.Domain.csproj", "{BDCE3D66-968E-4C57-B8E0-F84B8E90C568}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPATemplate", "SPATemplate\SPATemplate.csproj", "{8DAD6BAD-FE0F-427A-A675-A6E5D846AA57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilityToolbox.iTask.Common", "UtilityToolbox.iTask.Common\UtilityToolbox.iTask.Common.csproj", "{F4197E73-CD10-41A5-BEAE-2FC290CA8633}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{BDCE3D66-968E-4C57-B8E0-F84B8E90C568}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDCE3D66-968E-4C57-B8E0-F84B8E90C568}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BDCE3D66-968E-4C57-B8E0-F84B8E90C568}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DAD6BAD-FE0F-427A-A675-A6E5D846AA57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DAD6BAD-FE0F-427A-A675-A6E5D846AA57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DAD6BAD-FE0F-427A-A675-A6E5D846AA57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DAD6BAD-FE0F-427A-A675-A6E5D846AA57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4197E73-CD10-41A5-BEAE-2FC290CA8633}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4197E73-CD10-41A5-BEAE-2FC290CA8633}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4197E73-CD10-41A5-BEAE-2FC290CA8633}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4197E73-CD10-41A5-BEAE-2FC290CA8633}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
